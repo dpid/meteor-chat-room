@@ -1,0 +1,12 @@
+template(name="roomList")
+  .content-container
+    .room-list
+      ul
+        each rooms
+          li.room
+            a(href="/room/#{_id}" title=name data-id=_id) #{name}
+            .badge #{user_count} users
+    .room-create
+        label Create a new room
+        input.room-name(type="text" placeholder="Room name" required)
+        input.create-room(type="submit" value="Create")

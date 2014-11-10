@@ -1,0 +1,9 @@
+template(name="layout")
+  .navbar
+    .app-title Room Chat
+    if currentUser
+      a(href="/rooms") Lobby
+    .login
+      +loginButtons
+  .main
+    +yield

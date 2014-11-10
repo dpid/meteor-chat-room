@@ -1,0 +1,17 @@
+template(name="room")
+  .content-container
+    h3 #{roomName}
+    .messages-container
+      if messages
+        each messages
+          .message
+            span.username #{username}:
+            span.content #{content}
+    h3.user-list Online:
+    ul
+      each roomUsers
+        li #{data.username} (#{state})
+    .toolbar
+      .create-message
+        textarea.message(placeholder="Say something witty")
+        input.send-message(type="submit" value="Send message")
