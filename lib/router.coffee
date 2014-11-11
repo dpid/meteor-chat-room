@@ -4,18 +4,16 @@ Router.configure
   waitOn: -> Meteor.subscribe "allRooms"
 
 # Define page routes.
-# Require login on the home page when not on the home page.
-# After login, go to page where a user can select a room to join.
 Router.map ->
 
     @.route "home",
       path : "/"
       template : "home"
-      redirectOnLogin : true
 
-    @.route "loginRedirectRoute",
-      action : ->
-        Router.go("/rooms")
+    @.route "rooms",
+      path : "/rooms"
+      template : "roomList"
+      loginRequired : "home"
 
     @.route "room",
       path : "/room/:_id"
@@ -26,6 +24,7 @@ Router.map ->
         Meteor.subscribe "roomUsers", @.params._id
         Meteor.subscribe "roomMessages", @.params._id
       action : ->
+          Session.set "userName", Meteor.user().username
           Meteor.call "joinRoom", @.params._id
           Session.set "roomId", @.params._id
           @.render()
@@ -33,11 +32,3 @@ Router.map ->
       unload : ->
         Meteor.call "leaveRoom", @.params._id
         Session.set "roomId", null
-
-    @.route "rooms",
-      path : "/rooms"
-      template : "roomList"
-      loginRequired : "home"
-      action : ->
-        Session.set "userName", Meteor.user().username
-        @.render()

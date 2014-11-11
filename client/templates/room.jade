@@ -1,17 +1,23 @@
 template(name="room")
-  .content-container
+
     h3 #{roomName}
-    .messages-container
-      if messages
-        each messages
-          .message
-            span.username #{username}:
-            span.content #{content}
-    h3.user-list Online:
-    ul
+
+    label Who's in this room:
+    #users
       each roomUsers
-        li #{data.username} (#{state})
-    .toolbar
-      .create-message
-        textarea.message(placeholder="Say something witty")
-        input.send-message(type="submit" value="Send message")
+        span(class='label label-default #{state}') #{data.username}
+
+    form.create-message.input-group
+      input.form-control.message(placeholder="New message")
+      span.input-group-btn
+        input.btn.btn-default(type="submit" value="Send")
+
+    #messages-container.well
+      if messages.count
+        if messages
+          each messages
+            .message
+              label.username #{username}:
+              span.content #{content}
+      else
+        .message No messages yet

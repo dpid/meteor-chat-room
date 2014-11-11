@@ -1,2 +1,0 @@
-# Meteor.startup ->
-#   RoomUsers.remove {}

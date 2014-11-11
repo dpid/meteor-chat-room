@@ -1,5 +1,5 @@
 Meteor.publish "allRooms", -> Rooms.find()
-Meteor.publish "roomMessages", (roomId) -> Messages.find room_id:roomId
+Meteor.publish "roomMessages", (roomId) -> Messages.find roomId:roomId
 Meteor.publish "roomUsers", (roomId) ->
   filter =
     "data.roomId" : roomId

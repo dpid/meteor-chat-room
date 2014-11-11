@@ -1,9 +1,9 @@
 template(name="layout")
-  .navbar
-    .app-title Room Chat
-    if currentUser
-      a(href="/rooms") Lobby
-    .login
-      +loginButtons
-  .main
-    +yield
+  .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+    +loginButtons
+    if hasRoomId
+      a(href="/rooms") Leave Room
+
+  .jumbotron
+    .container
+      +yield

@@ -1,5 +1,8 @@
-Meteor.methods
+removeRoom = (roomId) ->
+  Rooms.remove roomId
+  Messages.remove roomId:roomId
 
+Meteor.methods
   createRoom : (roomName, callback) ->
     if not roomName then return
 
@@ -26,7 +29,7 @@ Meteor.methods
     roomUsers = UserPresences.find "data.roomId" : roomId
     roomUsersCount = roomUsers.count()-1
     if roomUsersCount <= 0
-      Rooms.remove roomId
+      removeRoom roomId
     else
       Rooms.update roomId, $set: user_count:roomUsersCount
 
@@ -34,7 +37,7 @@ Meteor.methods
     if not params.roomId or not params.message then return
     Messages.insert
       username : Meteor.user().username
-      room_id : params.roomId
+      roomId : params.roomId
       content : params.message
       creation_date : new Date()
 
@@ -53,7 +56,7 @@ UserPresenceSettings
       Meteor.setTimeout ->
         roomUsers = UserPresences.find "data.roomId" : roomId
         roomUsersCount = roomUsers.count()
-        if roomUsersCount <= 0 then Rooms.remove roomId
+        if roomUsersCount <= 0 then removeRoom roomId
       , 1000
     else
       Rooms.update roomId, $set: user_count:roomUsersCount

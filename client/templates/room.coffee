@@ -10,9 +10,9 @@ Template.room.helpers
     Messages.find {}, sort : creation_date : 'desc'
 
 Template.room.events =
-  "click .send-message" : (event, template) ->
+  "submit form.create-message" : (event, template) ->
     event.preventDefault()
-    $message = $("textarea.message")
+    $message = $("input.message")
     if $message.val() is "" then return
     Meteor.call "createMessage",
       roomId : Session.get "roomId"
