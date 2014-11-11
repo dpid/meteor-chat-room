@@ -4,7 +4,7 @@ Template.room.helpers
     room ?= name : "Current Room"
     room.name
   roomUsers : ->
-    UserPresences.find {}, sort : username : "asc"
+    UserPresences.find {}, sort : "data.username" : "asc"
   messages : ->
     Messages.find {}, sort : creation_date : 'desc'
 

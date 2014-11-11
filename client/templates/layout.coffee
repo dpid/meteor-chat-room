@@ -1,2 +1,2 @@
 Template.layout.helpers
-  hasRoomId : -> if Session.get "roomId" then true else false
+  hasRoomId : -> if Meteor.userId() and Session.get("roomId") then true else false

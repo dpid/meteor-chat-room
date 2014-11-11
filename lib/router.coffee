@@ -14,6 +14,9 @@ Router.map ->
       path : "/rooms"
       template : "roomList"
       loginRequired : "home"
+      action : ->
+        Session.set "roomId", null
+        @.render()
 
     @.route "room",
       path : "/room/:_id"
@@ -32,3 +35,9 @@ Router.map ->
       unload : ->
         Meteor.call "leaveRoom", @.params._id
         Session.set "roomId", null
+
+Router.onBeforeAction ->
+  if not Meteor.userId()
+    @.render "home"
+  else
+    @.next()
