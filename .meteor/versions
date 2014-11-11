@@ -16,7 +16,7 @@ ctl-helper@1.0.4
 ctl@1.0.2
 ddp@1.0.11
 deps@1.0.5
-dpid:user-presence@1.0.0
+dpid:user-presence@1.0.1
 ejson@1.0.4
 email@1.0.4
 fastclick@1.0.1
