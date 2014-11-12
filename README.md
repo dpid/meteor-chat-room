@@ -27,9 +27,11 @@ Meteor Chat Room is an open source app powered by [Meteor](https://www.meteor.co
 ##CoffeScript
 
 This demo uses [CoffeeScript](http://coffeescript.org/) as a cleaner way to write JavaScript.
-More information on the Meteor package can be found at https://atmospherejs.com/meteor/coffeescript
+For package information, see https://atmospherejs.com/meteor/coffeescript
 
 ##Jade
 
-This demo uses the [Jade](http://jade-lang.com/) template engine as a cleaner way to write html. More information on the Meteor package can
-be found at https://atmospherejs.com/mquandalle/jade
+This demo uses the [Jade](http://jade-lang.com/) template engine as a cleaner way to write html. For package information, see https://atmospherejs.com/mquandalle/jade
+
+##Less
+This demo uses [Less](http://lesscss.org/) as an easier way to write css. For package information, see https://atmospherejs.com/meteor/less
