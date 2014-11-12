@@ -9,7 +9,6 @@ accounts-ui
 accounts-password
 coffeescript
 mquandalle:jade
-less
+stylus
 dpid:user-presence
 mizzao:bootstrap-3
-

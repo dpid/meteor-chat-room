@@ -13,7 +13,7 @@ In this file, we handle a few things:
 ## head.jade
 Simply defines the app head html.
 
-## styles.less
+## styles.styl
 Style definitions for the app.
 
 Note: This app uses [Bootstrap](http://getbootstrap.com/) which conveniently defines most css for us. For package info, see https://atmospherejs.com/mizzao/bootstrap-3

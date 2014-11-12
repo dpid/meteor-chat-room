@@ -35,8 +35,8 @@ For package information, see https://atmospherejs.com/meteor/coffeescript
 
 This demo uses the [Jade](http://jade-lang.com/) template engine as a cleaner way to write html. For package information, see https://atmospherejs.com/mquandalle/jade
 
-##Less
-This demo uses [Less](http://lesscss.org/) as an easier way to write css. For package information, see https://atmospherejs.com/meteor/less
+##Stylus
+This demo uses [Stylus](http://learnboost.github.io/stylus/) as a cleaner way to write css. For package information, see https://atmospherejs.com/meteor/stylus
 
 ##Bootstrap
 This demo uses [Bootstrap](http://getbootstrap.com/) for fast prototyping UI. For package information, see https://atmospherejs.com/mizzao/bootstrap-3
