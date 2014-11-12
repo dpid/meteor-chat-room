@@ -5,8 +5,8 @@ Meteor Chat Room is an open source app powered by [Meteor](https://www.meteor.co
 [Damon Pidhajecky](http://www.damonpidhajecky.com). In this demo we explore the following techniques:
 
   * __User login__
-    * Track reactive user data to navigate to the room list page after login.
-    * Track reactive user data to navigate back to the home page after logout.
+    * Track reactive session data to navigate to the room list page after login.
+    * Track reactive session data to navigate back to the home page after logout.
 
   * __User Presence__
     * Use the [dpid:user-presence](https://github.com/dpid/meteor-user-presence/) package to detect
