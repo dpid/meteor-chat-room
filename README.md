@@ -16,7 +16,7 @@ Meteor Chat Room is an open source app powered by [Meteor](https://www.meteor.co
   * __Room List Page__
     * Use template helpers to display a reactive list of rooms.
     * Use template events to create a room.
-    -
+
   * __Rooms__
     * Use the [iron:router](https://github.com/eventedmind/iron-router/) package to subscribe to
       parameterized collection publications specific to the room the user is in.
