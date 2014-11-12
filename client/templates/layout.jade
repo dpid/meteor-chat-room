@@ -1,9 +1,12 @@
 template(name="layout")
   .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+    //- Show the accounts login button
     +loginButtons
+    //- Check if the user has a room id. If so, show a link to leave the room.
     if hasRoomId
       a(href="/rooms") Leave Room
 
   .jumbotron
     .container
+      //- Show the sub-template
       +yield

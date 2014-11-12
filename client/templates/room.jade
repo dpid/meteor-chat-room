@@ -4,14 +4,18 @@ template(name="room")
 
     label Who's in this room:
     #users
+      //- Display users in the current room. Since all data is reactive, this will update live.
       each roomUsers
+        //- Setting the state string in the classes will indicate, via css, if a user is online or idle!
         span(class='label label-default #{state}') #{data.username}
 
+    //- Create message form
     form.create-message.input-group
       input.form-control.message(placeholder="New message")
       span.input-group-btn
         input.btn.btn-default(type="submit" value="Send")
 
+    //- Display messages. This will update automatically because of reactive collection data.
     #messages-container.well
       if messages.count
         if messages

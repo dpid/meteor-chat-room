@@ -2,6 +2,7 @@ template(name="roomList")
 
   h3 Create a room
 
+  //- Create room form
   form.create-room.input-group
     input.form-control.room-name(type="text" placeholder="New room name")
     span.input-group-btn
@@ -9,6 +10,7 @@ template(name="roomList")
 
   h3 Rooms
 
+  //- Display rooms. Reactive data will update the available rooms live.
   if rooms.count
     .list-group
       each rooms
