@@ -2,7 +2,7 @@
 Meteor.methods
   # Create a room by adding it to the Rooms collection
   # The callback parameter is automatically handled by Meteor.
-  # Checkout client/templates/roomList.coffee to see it called.
+  # See client/templates/roomList.coffee for an example call.
   createRoom : (roomName, callback) ->
     if not roomName then return
     # Insert the new room into the Rooms collection
@@ -13,7 +13,7 @@ Meteor.methods
 
   # Join a room.
   # When joining we want to update the user count.
-  # Checkout lib/router.coffee to see it called.
+  # See lib/router.coffee for an example call.
   joinRoom : (roomId) ->
     if not checkIsValidRoom roomId then return
     # Set the new room count.
@@ -24,7 +24,7 @@ Meteor.methods
   # Leave a room.
   # When leaving we want to update the user count.
   # If there are no users in the room, then remove it from the collection.
-  # Checkout lib/rounter.coffee to see it called.
+  # See lib/rounter.coffee for an example call
   leaveRoom : (roomId) ->
     if not checkIsValidRoom roomId then return
     # If no users left in the room, then remove.
@@ -37,7 +37,7 @@ Meteor.methods
       Rooms.update roomId, $set: user_count:roomUsersCount
 
   # Create a message and insert it into the Messages collection.
-  # Checkout client/templates/room.coffee to see it called.
+  # See client/templates/room.coffee for an example call.
   createMessage : (params={}) ->
     if not params.roomId or not params.message then return
     Messages.insert
