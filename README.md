@@ -24,6 +24,8 @@ Meteor Chat Room is an open source app powered by [Meteor](https://www.meteor.co
     * Use template helpers to display a reactive list of messages.
     * Use template events to submit a new message.
 
+You can see a live version of the app at http://dpidchatroom.meteor.com/
+
 ##CoffeScript
 
 This demo uses [CoffeeScript](http://coffeescript.org/) as a cleaner way to write JavaScript.
