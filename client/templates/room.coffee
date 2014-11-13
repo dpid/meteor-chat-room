@@ -18,9 +18,9 @@ Template.room.helpers
 Template.room.events =
   # Create a message on form submit.
   # Note: It is recommended to use 'submit' instead of 'click' since it will handle all submit cases.
-  "submit form.create-message" : (event, template) ->
+  "submit [data-action=create-message]" : (event, template) ->
     event.preventDefault()
-    $message = $("input.message")
+    $message = $("[data-value=create-message]")
     if $message.val() is "" then return
     # Call the Meteor.method function on the server to handle putting it into the messages collection.
     Meteor.call "createMessage",

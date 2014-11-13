@@ -10,8 +10,8 @@ template(name="room")
         span(class='label label-default #{state}') #{data.username}
 
     //- Create message form
-    form.create-message.input-group
-      input.form-control.message(placeholder="New message")
+    form.input-group(data-action="create-message")
+      input.form-control(data-value="create-message" placeholder="New message")
       span.input-group-btn
         input.btn.btn-default(type="submit" value="Send")
 

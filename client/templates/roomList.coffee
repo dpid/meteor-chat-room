@@ -7,10 +7,10 @@ Template.roomList.helpers
 Template.roomList.events
   # Create a room on form submit.
   # Note: It is recommended to use 'submit' instead of 'click' since it will handle all submit cases.
-  'submit form.create-room' : (event, template) ->
+  'submit [data-action=create-room]' : (event, template) ->
     event.preventDefault()
 
-    roomName = $('input.room-name').val()
+    roomName = $('[data-value=create-room]').val()
     if not roomName then return
 
     # Call the Meteor.method function on the server to handle putting it into the rooms collection.

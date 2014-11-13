@@ -3,8 +3,8 @@ template(name="roomList")
   h3 Create a room
 
   //- Create room form
-  form.create-room.input-group
-    input.form-control.room-name(type="text" placeholder="New room name")
+  form.input-group(data-action="create-room")
+    input.form-control(data-value="create-room" type="text" placeholder="New room name")
     span.input-group-btn
       input.btn.btn-default(type="submit" value="Create")
 
