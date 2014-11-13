@@ -1,28 +1,24 @@
 # Configure the base template for the application
 Router.configure
   layoutTemplate: "layout"
+  notFoundTemplate: "home"
   waitOn: -> Meteor.subscribe "allRooms"
 
 # Define page routes.
 Router.map ->
 
-    @.route "home",
-      path : "/"
+    @.route "/",
       template : "home"
 
-    @.route "rooms",
-      path : "/rooms"
+    @.route "/rooms",
       template : "roomList"
-      loginRequired : "home"
       # Set the session roomId to null when navigating to a non room page.
       action : ->
         Session.set "roomId", null
         @.render()
 
-    @.route "room",
-      path : "/room/:_id"
+    @.route "/room/:_id",
       template : "room"
-      loginRequired : "home"
       # Subscribe to the room user list and messages associated with this room id.
       # See, server/publications.coffee for publication setup.
       waitOn : ->

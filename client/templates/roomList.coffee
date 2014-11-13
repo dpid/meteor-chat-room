@@ -17,7 +17,4 @@ Template.roomList.events
     # Also, setup a callback that will navigate to the room when the server is done.
     Meteor.call "createRoom", roomName, (error, result) ->
       if error then return
-
-      Router.go "room",
-        name: roomName
-        _id : result
+      Router.go "/room/#{result}"
