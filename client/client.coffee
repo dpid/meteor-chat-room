@@ -5,7 +5,7 @@ Accounts.ui.config passwordSignupFields: "USERNAME_ONLY"
 # If so, then navigate to the room list page.
 Tracker.autorun ->
   if Meteor.userId()
-    if Router.current() and Router.current().route.getName() is "home"
+    if Router.current() and Router.current().route._path is "/"
       Router.go "rooms"
 
 # Setup user presences optional data
